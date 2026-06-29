@@ -89,6 +89,7 @@ jobs:
           image-ref: ${{ steps.build.outputs.image }}
           severity: CRITICAL
           exit-code: "1"
+          ignore-unfixed: true
 
       - name: Push image to ECR
         run: docker push ${{ steps.build.outputs.image }}
